@@ -1,7 +1,7 @@
 #ifndef CONTEST
-#include ”babyratio.hpp”
+#include "babyratio.h"
 #endif
-#include <cmath>
+
 
 using namespace std;
 
@@ -13,7 +13,7 @@ den=d;
 
 rational rational::add(rational r)
 {
-int n1=this->nom,n2=r->nom,d1=this->den,d2=r->den;
+int n1=nom,n2=r.nom,d1=den,d2=r.den;
 int r1=(n1*d2+n2*d1);
 int r2=d1*d2;
 int k=gcd(r1,r2);
@@ -29,7 +29,7 @@ return (rational(r1,r2));
 
 rational rational::sub(rational r)
 {
-int n1=this->nom,n2=r->nom,d1=this->den,d2=r->den;
+int n1=nom,n2=r.nom,d1=den,d2=r.den;
 int r1=(n1*d2-n2*d1);
 int r2=d1*d2;
 int k=gcd(r1,r2);
@@ -47,7 +47,7 @@ return (rational(r1,r2));
 
 rational rational::mul(rational r)
 {
-int n1=this->nom,n2=r->nom,d1=this->den,d2=r->den;
+int n1=nom,n2=r.nom,d1=den,d2=r.den;
 int r1=(n1*n2);
 int r2=d1*d2;
 int k=gcd(r1,r2);
@@ -63,7 +63,7 @@ return (rational(r1,r2));
 
 rational rational::div(rational r)
 {
-int n1=this->nom,n2=r->nom,d1=this->den,d2=r->den;
+int n1=nom,n2=r.nom,d1=den,d2=r.den;
 int r1=(n1*d2);
 int r2=d1*n2;
 int k=gcd(r1,r2);
@@ -79,7 +79,7 @@ return (rational(r1,r2));
 
 void rational::print()
 {
-cout<<this->nom<<"/"<<this->den<<" ";
+cout<<nom<<"/"<<den<<" ";
 }
 
 int rational::gcd(int a,int b)
