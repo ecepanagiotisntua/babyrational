@@ -79,7 +79,7 @@ return (rational(r1,r2));
 
 void rational::print()
 {
-cout<<nom<<"/"<<den<<" ";
+cout<<nom<<"/"<<den;
 }
 
 int rational::gcd(int a,int b)
